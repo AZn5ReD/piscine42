@@ -6,11 +6,12 @@
 /*   By: lbonnete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/11 12:35:23 by lbonnete          #+#    #+#             */
-/*   Updated: 2018/08/11 17:09:33 by lbonnete         ###   ########.fr       */
+/*   Updated: 2018/08/11 20:43:06 by jchirk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include "ft_header.h"
 
 void	ft_putchar(char c)
 {

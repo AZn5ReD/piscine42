@@ -6,9 +6,11 @@
 /*   By: jchirk <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/11 13:42:35 by jchirk            #+#    #+#             */
-/*   Updated: 2018/08/11 16:35:05 by jchirk           ###   ########.fr       */
+/*   Updated: 2018/08/11 20:42:46 by jchirk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_header.h"
 
 int		is_in_row(int **sudoku, int row, int num)
 {
