@@ -6,7 +6,7 @@
 /*   By: lbonnete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/11 14:43:01 by lbonnete          #+#    #+#             */
-/*   Updated: 2018/08/12 17:32:18 by lbonnete         ###   ########.fr       */
+/*   Updated: 2018/08/12 19:03:37 by lbonnete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,8 @@ int		main(int argc, char **argv)
 		write(1, "Error\n", 6);
 		return (0);
 	}
+	if (ft_17check(sudoku))
+		return (0);
 	ft_fill_sudoku(ukodus, argc, argv);
 	ft_exe(sudoku, ukodus);
 	free(sudoku);
