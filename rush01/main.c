@@ -6,7 +6,7 @@
 /*   By: lbonnete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/11 14:43:01 by lbonnete          #+#    #+#             */
-/*   Updated: 2018/08/11 21:08:34 by jchirk           ###   ########.fr       */
+/*   Updated: 2018/08/12 17:32:18 by lbonnete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,12 +67,25 @@ int		ft_fill_sudoku(int **sudoku, int argc, char **argv)
 	return (0);
 }
 
+void	ft_exe(int **sudoku, int **ukodus)
+{
+	ft_olga(ukodus, 0);
+	ft_algo(sudoku, 0);
+	if (ft_sudoku_checker(sudoku, ukodus))
+		ft_print_sudoku(sudoku);
+	else
+		write(1, "Error\n", 6);
+}
+
 int		main(int argc, char **argv)
 {
 	int **sudoku;
+	int **ukodus;
 
 	sudoku = (int**)malloc(sizeof(int*) * 9 + 1);
 	ft_malloc(sudoku);
+	ukodus = (int**)malloc(sizeof(int*) * 9 + 1);
+	ft_malloc(ukodus);
 	if (argc != 10 || sudoku == NULL)
 	{
 		write(1, "Error\n", 6);
@@ -84,10 +97,9 @@ int		main(int argc, char **argv)
 		write(1, "Error\n", 6);
 		return (0);
 	}
-	if (ft_algo(sudoku, 0))
-		ft_print_sudoku(sudoku);
-	else
-		write(1, "Error\n", 6);
+	ft_fill_sudoku(ukodus, argc, argv);
+	ft_exe(sudoku, ukodus);
 	free(sudoku);
+	free(ukodus);
 	return (0);
 }
