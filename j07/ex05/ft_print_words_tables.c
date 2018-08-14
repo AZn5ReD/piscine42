@@ -6,11 +6,9 @@
 /*   By: jchirk <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/12 12:11:09 by jchirk            #+#    #+#             */
-/*   Updated: 2018/08/13 19:17:23 by jchirk           ###   ########.fr       */
+/*   Updated: 2018/08/14 15:19:32 by jchirk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-char	**ft_split_whitespaces(char *str);
 
 void	ft_putchar(char c);
 
