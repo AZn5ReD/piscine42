@@ -1,6 +1,0 @@
-Credentials cache: API:5179D8D8-8362-4758-8E9A-3C3F2B20E710
-        Principal: jchirk@42.FR
-
-  Issued                Expires               Principal
-Jul 30 12:33:00 2018  Aug  6 12:33:00 2018  krbtgt/42.FR@42.FR
-Jul 30 12:36:48 2018  Aug  6 12:33:00 2018  host/vgs-fn1.42.fr@42.FR
