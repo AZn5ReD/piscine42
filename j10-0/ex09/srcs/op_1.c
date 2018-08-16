@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   op.c                                               :+:      :+:    :+:   */
+/*   op-1.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jchirk <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/14 20:31:23 by jchirk            #+#    #+#             */
-/*   Updated: 2018/08/15 18:17:14 by jchirk           ###   ########.fr       */
+/*   Created: 2018/08/16 15:28:24 by jchirk            #+#    #+#             */
+/*   Updated: 2018/08/16 16:04:59 by jchirk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_do_op.h"
 
-int		ft_op_plus(int a, int b, int *err)
+int		ft_add(int a, int b, int *err)
 {
 	*err = 0;
 	return (a + b);
 }
 
-int		ft_op_minus(int a, int b, int *err)
+int		ft_sub(int a, int b, int *err)
 {
 	*err = 0;
 	return (a - b);
 }
 
-int		ft_op_multiply(int a, int b, int *err)
+int		ft_mul(int a, int b, int *err)
 {
 	*err = 0;
 	return (a * b);
 }
 
-int		ft_op_divide(int a, int b, int *err)
+int		ft_div(int a, int b, int *err)
 {
 	*err = 0;
 	if (b == 0)
@@ -43,7 +43,7 @@ int		ft_op_divide(int a, int b, int *err)
 		return (a / b);
 }
 
-int		ft_op_modulo(int a, int b, int *err)
+int		ft_mod(int a, int b, int *err)
 {
 	*err = 0;
 	if (b == 0)
