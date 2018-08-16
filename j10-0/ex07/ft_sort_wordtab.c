@@ -6,7 +6,7 @@
 /*   By: jchirk <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/15 19:46:41 by jchirk            #+#    #+#             */
-/*   Updated: 2018/08/15 20:51:01 by jchirk           ###   ########.fr       */
+/*   Updated: 2018/08/16 16:20:12 by jchirk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int		ft_strcmp(char *s1, char *s2)
 
 void	ft_sort_wordtab(char **tab)
 {
-	int i;
-	int size;
-	char **tmp;
+	int		i;
+	int		size;
+	char	**tmp;
 
 	i = 0;
 	size = 0;
