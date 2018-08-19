@@ -6,7 +6,7 @@
 /*   By: jchirk <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/18 20:11:35 by jchirk            #+#    #+#             */
-/*   Updated: 2018/08/18 22:43:43 by jchirk           ###   ########.fr       */
+/*   Updated: 2018/08/19 13:19:16 by mdchane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void	ft_compare_colle(void)
 	i = 0;
 	flag = 0;
 	str_read = ft_read();
+	if (ft_strcmp(str_read, "") == 0 || ft_strcmp(str_read, "\n") == 0)
+		i = 6;
 	largeur = ft_largeur(str_read);
 	hauteur = ft_hauteur(str_read);
 	while (i < 5)

@@ -6,7 +6,7 @@
 /*   By: jchirk <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/18 14:33:49 by jchirk            #+#    #+#             */
-/*   Updated: 2018/08/18 15:39:00 by jchirk           ###   ########.fr       */
+/*   Updated: 2018/08/19 23:10:03 by jchirk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #define HG 'A'
 #define HD 'C'
-#define HH 'A'
+#define HH 'B'
 #define BG 'A'
 #define BD 'C'
 #define BB 'B'

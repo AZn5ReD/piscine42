@@ -6,7 +6,7 @@
 /*   By: jchirk <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/18 22:41:36 by jchirk            #+#    #+#             */
-/*   Updated: 2018/08/18 22:41:38 by jchirk           ###   ########.fr       */
+/*   Updated: 2018/08/19 12:23:46 by jchirk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char		*first_line0(int x, char *str)
 	while (i <= x)
 	{
 		if (i == 1)
-			str = ft_strcat(str, "o");
+			str[0] = 'o';
 		else if (i == x && x != 1)
 			str = ft_strcat(str, "o");
 		else

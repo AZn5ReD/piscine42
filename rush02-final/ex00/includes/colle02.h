@@ -6,7 +6,7 @@
 /*   By: jchirk <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/18 17:03:57 by jchirk            #+#    #+#             */
-/*   Updated: 2018/08/18 23:00:24 by jchirk           ###   ########.fr       */
+/*   Updated: 2018/08/19 11:21:08 by mdchane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void		ft_print_res(int colle, int flag, int largeur, int hauteur);
 
 typedef char *(*t_ptr)(int, int);
 
-static f_ptr g_ftab[] =
+static t_ptr g_ftab[] =
 {
 	&colle0,
 	&colle1,
