@@ -6,7 +6,7 @@
 /*   By: jchirk <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 13:48:41 by jchirk            #+#    #+#             */
-/*   Updated: 2018/08/14 11:25:29 by jchirk           ###   ########.fr       */
+/*   Updated: 2018/08/20 13:25:15 by jchirk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ struct	s_stock_par	*ft_param_to_tab(int ac, char **av)
 	while (i < ac)
 	{
 		par_tab[i].size_param = ft_strlen(av[i]);
-		par_tab[i].str = (*av + i);
+		par_tab[i].str = av[i];
 		par_tab[i].copy = ft_strdup(av[i]);
 		par_tab[i].tab = ft_split_whitespaces(av[i]);
 		i++;

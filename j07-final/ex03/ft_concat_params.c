@@ -6,7 +6,7 @@
 /*   By: jchirk <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/09 14:37:40 by jchirk            #+#    #+#             */
-/*   Updated: 2018/08/15 18:37:36 by jchirk           ###   ########.fr       */
+/*   Updated: 2018/08/16 21:33:04 by jchirk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_concat_into_str(char *str, int argc, char **argv)
 			k++;
 			j++;
 		}
-		if (i < argc - 1) 
+		if (i < argc - 1)
 			str[k] = '\n';
 		k++;
 		i++;
@@ -58,4 +58,9 @@ char	*ft_concat_params(int argc, char **argv)
 	if (!(str = (char*)malloc(sizeof(*str) * size + 1)))
 		return (0);
 	return (ft_concat_into_str(str, argc, argv));
+}
+
+int main(int argc, char **argv)
+{
+	printf("%s\n", ft_concat_params(argc, argv));
 }
