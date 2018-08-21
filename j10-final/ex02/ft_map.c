@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_clear.c                                    :+:      :+:    :+:   */
+/*   ft_map.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jchirk <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/17 12:28:58 by jchirk            #+#    #+#             */
-/*   Updated: 2018/08/21 15:59:53 by jchirk           ###   ########.fr       */
+/*   Created: 2018/08/14 16:44:06 by jchirk            #+#    #+#             */
+/*   Updated: 2018/08/20 15:41:38 by jchirk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+#include <stdlib.h>
 
-void		ft_list_clear(t_list **begin_list)
+int		*ft_map(int *tab, int length, int (*f)(int))
 {
-	t_list	*next;
-	t_list	*current;
+	int i;
+	int *ret_tab;
 
-	current = *begin_list;
-	while (current != NULL)
+	i = 0;
+	if (!(ret_tab = (int*)malloc(sizeof(ret_tab) * length)))
+		return (NULL);
+	while (i < length)
 	{
-		next = current->next;
-		free(current);
-		current = next;
+		ret_tab[i] = f(tab[i]);
+		i++;
 	}
-	*begin_list = NULL;
+	return (ret_tab);
 }

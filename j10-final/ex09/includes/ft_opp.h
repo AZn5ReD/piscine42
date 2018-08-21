@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_clear.c                                    :+:      :+:    :+:   */
+/*   ft_opp.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jchirk <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/17 12:28:58 by jchirk            #+#    #+#             */
-/*   Updated: 2018/08/21 15:59:53 by jchirk           ###   ########.fr       */
+/*   Created: 2018/08/16 14:02:44 by jchirk            #+#    #+#             */
+/*   Updated: 2018/08/21 12:56:21 by jchirk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+#ifndef FT_OPP_H
+# define FT_OPP_H
 
-void		ft_list_clear(t_list **begin_list)
+t_opp g_opptab[] =
 {
-	t_list	*next;
-	t_list	*current;
+	{"+", &ft_add},
+	{"-", &ft_sub},
+	{"*", &ft_mul},
+	{"/", &ft_div},
+	{"%", &ft_mod},
+	{"", &ft_usage}
+};
 
-	current = *begin_list;
-	while (current != NULL)
-	{
-		next = current->next;
-		free(current);
-		current = next;
-	}
-	*begin_list = NULL;
-}
+#endif

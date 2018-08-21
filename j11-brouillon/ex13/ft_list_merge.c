@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_clear.c                                    :+:      :+:    :+:   */
+/*   ft_list_merge.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jchirk <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/17 12:28:58 by jchirk            #+#    #+#             */
-/*   Updated: 2018/08/21 15:59:53 by jchirk           ###   ########.fr       */
+/*   Created: 2018/08/21 11:43:31 by jchirk            #+#    #+#             */
+/*   Updated: 2018/08/21 11:45:23 by jchirk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-void		ft_list_clear(t_list **begin_list)
+void	ft_list_merge(t_list **begin_list, t_list *begin_list2)
 {
-	t_list	*next;
 	t_list	*current;
 
 	current = *begin_list;
-	while (current != NULL)
-	{
-		next = current->next;
-		free(current);
-		current = next;
-	}
-	*begin_list = NULL;
+	while (current->next != NULL)
+		current = current->next;
+	current->next = begin_list2;
 }

@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jchirk <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/16 16:55:23 by jchirk            #+#    #+#             */
-/*   Updated: 2018/08/16 17:26:14 by jchirk           ###   ########.fr       */
+/*   Created: 2018/08/14 20:37:21 by jchirk            #+#    #+#             */
+/*   Updated: 2018/08/15 18:13:51 by jchirk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
-# include <stdlib.h>
+#include "ft_do_op.h"
 
-typedef	struct		s_list
+int		main(int argc, char **argv)
 {
-	struct s_list	*next;
-	void			*data;
-}					t_list;
-
-t_list				*ft_create_elem(void *data);
-
-#endif
+	ft_do_op(argc, argv);
+	return (0);
+}

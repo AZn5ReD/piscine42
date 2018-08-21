@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_clear.c                                    :+:      :+:    :+:   */
+/*   ft_sorted_list_insert.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jchirk <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/17 12:28:58 by jchirk            #+#    #+#             */
-/*   Updated: 2018/08/21 15:59:53 by jchirk           ###   ########.fr       */
+/*   Created: 2018/08/21 16:07:19 by jchirk            #+#    #+#             */
+/*   Updated: 2018/08/21 17:57:06 by jchirk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-void		ft_list_clear(t_list **begin_list)
+void	ft_sorted_list_insert(t_list **begin_list, void *data, int (*cmp)())
 {
-	t_list	*next;
-	t_list	*current;
+	t_list *current;
+	t_list *previous;
+	t_list *new;
 
+	previous = NULL;
 	current = *begin_list;
-	while (current != NULL)
+	new = ft_create_elem(data);
+	if (current != NULL && cmp(current->data, data) >= 0)
 	{
-		next = current->next;
-		free(current);
-		current = next;
+		new->next = current;
+		*begin_list = new;
+		return ;
 	}
-	*begin_list = NULL;
+	while (current != NULL && cmp(current->data, data) < 0)
+	{
+		previous = current;
+		current = current->next;
+	}
+	previous->next = new;
+	if (current != NULL)
+		new->next = current;
 }

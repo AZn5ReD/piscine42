@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_clear.c                                    :+:      :+:    :+:   */
+/*   ft_is_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jchirk <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/17 12:28:58 by jchirk            #+#    #+#             */
-/*   Updated: 2018/08/21 15:59:53 by jchirk           ###   ########.fr       */
+/*   Created: 2018/08/14 18:07:40 by jchirk            #+#    #+#             */
+/*   Updated: 2018/08/20 18:47:20 by jchirk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
-
-void		ft_list_clear(t_list **begin_list)
+int		ft_is_sort(int *tab, int length, int (*f)(int, int))
 {
-	t_list	*next;
-	t_list	*current;
+	int i;
 
-	current = *begin_list;
-	while (current != NULL)
+	i = 0;
+	while (i < length - 1)
 	{
-		next = current->next;
-		free(current);
-		current = next;
+		if (f(tab[i], tab[i + 1]) > 0)
+			return (0);
+		i++;
 	}
-	*begin_list = NULL;
+	return (1);
 }

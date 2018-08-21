@@ -6,7 +6,7 @@
 #    By: amelman <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/18 18:20:43 by amelman           #+#    #+#              #
-#    Updated: 2018/08/19 19:00:43 by jchirk           ###   ########.fr        #
+#    Updated: 2018/08/21 10:30:54 by jchirk           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ FLAGS= -Wall -Werror -Wextra -c -I$(INC_DIR)
 all: $(NAME)
 $(NAME):
 	$(CC) $(FLAGS) $(SRC) 
-	$(CC) -o $(NAME) $(SRC.O)
+	$(CC) -o $(NAME) -fsanitize=address $(SRC.O)
 
 clean:
 	rm $(SRC.O)

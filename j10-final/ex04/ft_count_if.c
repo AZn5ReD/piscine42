@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_clear.c                                    :+:      :+:    :+:   */
+/*   ft_count_if.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jchirk <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/17 12:28:58 by jchirk            #+#    #+#             */
-/*   Updated: 2018/08/21 15:59:53 by jchirk           ###   ########.fr       */
+/*   Created: 2018/08/14 17:24:07 by jchirk            #+#    #+#             */
+/*   Updated: 2018/08/14 18:06:54 by jchirk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
-
-void		ft_list_clear(t_list **begin_list)
+int		ft_count_if(char **tab, int (*f)(char*))
 {
-	t_list	*next;
-	t_list	*current;
+	int i;
+	int ret;
 
-	current = *begin_list;
-	while (current != NULL)
+	i = 0;
+	ret = 0;
+	while (tab[i] != 0)
 	{
-		next = current->next;
-		free(current);
-		current = next;
+		if (f(tab[i]) == 1)
+			ret += 1;
+		i++;
 	}
-	*begin_list = NULL;
+	return (ret);
 }
