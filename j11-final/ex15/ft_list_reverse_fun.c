@@ -6,7 +6,7 @@
 /*   By: jchirk <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/21 15:07:07 by jchirk            #+#    #+#             */
-/*   Updated: 2018/08/21 15:58:30 by jchirk           ###   ########.fr       */
+/*   Updated: 2018/08/22 19:27:42 by jchirk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,34 @@
 
 t_list	*ft_list_at(t_list *begin_list, unsigned int nbr)
 {
-	int		i;
-	t_list	*current;
+	unsigned int	i;
+	t_list			*current;
 
 	i = 0;
 	current = begin_list;
 	while (current != NULL)
 	{
-		current = current->next;
-		if (i == (nbr - 1))
+		if (i == nbr)
 			return (current);
+		current = current->next;
 		i++;
 	}
 	return (NULL);
+}
+
+int		ft_list_size(t_list *begin_list)
+{
+	int		size;
+	t_list	*current;
+
+	size = -1;
+	current = begin_list;
+	while (current != NULL)
+	{
+		size++;
+		current = current->next;
+	}
+	return (size);
 }
 
 void	ft_list_reverse_fun(t_list *begin_list)
@@ -37,15 +52,11 @@ void	ft_list_reverse_fun(t_list *begin_list)
 	t_list	*rev;
 	void	*tmp;
 
-	i = 1;
-	size = 0;
+	i = 0;
+	if (begin_list == NULL)
+		return ;
 	current = begin_list;
-	while (current->next != NULL)
-	{
-		size++;
-		current = current->next;
-	}
-	current = begin_list;
+	size = ft_list_size(begin_list);
 	while (i <= size)
 	{
 		tmp = current->data;

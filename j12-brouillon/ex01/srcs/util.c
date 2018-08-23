@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_merge.c                                    :+:      :+:    :+:   */
+/*   util.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jchirk <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/21 11:43:31 by jchirk            #+#    #+#             */
-/*   Updated: 2018/08/21 11:45:23 by jchirk           ###   ########.fr       */
+/*   Created: 2018/08/21 18:39:24 by jchirk            #+#    #+#             */
+/*   Updated: 2018/08/21 19:57:58 by jchirk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+#include "ft_cat.h"
 
-void	ft_list_merge(t_list **begin_list, t_list *begin_list2)
+void	ft_putchar(char c)
 {
-	t_list	*current;
+	write(1, &c, 1);
+}
 
-	current = *begin_list;
-	while (current->next != NULL)
-		current = current->next;
-	current->next = begin_list2;
+void	ft_putstr(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != 0)
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
 }

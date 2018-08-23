@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_push_params.c                              :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jchirk <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/16 21:19:56 by jchirk            #+#    #+#             */
-/*   Updated: 2018/08/20 16:34:59 by jchirk           ###   ########.fr       */
+/*   Created: 2018/08/21 19:05:09 by jchirk            #+#    #+#             */
+/*   Updated: 2018/08/22 14:46:25 by jchirk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+#include "ft_cat.h"
 
-t_list		*ft_list_push_params(int ac, char **av)
+int		main(int argc, char **argv)
 {
-	int		i;
-	t_list	*list;
-	t_list	*current;
+	int i;
 
 	i = 1;
-	list = NULL;
-	while (i < ac)
-	{
-		current = ft_create_elem(av[i]);
-		current->next = list;
-		list = current;
-		i++;
-	}
-	return (list);
+	if (argc > 1)
+		ft_print_files(argc, argv);
+	return (0);
 }

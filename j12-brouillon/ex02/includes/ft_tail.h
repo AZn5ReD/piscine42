@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   ft_tail.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jchirk <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/16 16:55:23 by jchirk            #+#    #+#             */
-/*   Updated: 2018/08/21 11:45:05 by jchirk           ###   ########.fr       */
+/*   Created: 2018/08/22 16:08:17 by jchirk            #+#    #+#             */
+/*   Updated: 2018/08/22 16:08:32 by jchirk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
-# include <stdlib.h>
+#ifndef FT_TAIL_H
+# define FT_TAIL_H
 
-typedef	struct		s_list
-{
-	struct s_list	*next;
-	void			*data;
-}					t_list;
+# include <unistd.h>
+# include <sys/types.h>
+# include <sys/uio.h>
+# include <fcntl.h>
+# include <errno.h>
+# include <stdio.h>
 
-t_list				*ft_create_elem(void *data);
-
+void		ft_putchar(char c);
+void		ft_putstr(char *str);
+void		ft_display_file(char *path);
+void		ft_print_files(int argc, char **argv);
 #endif

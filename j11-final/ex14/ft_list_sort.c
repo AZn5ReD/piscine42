@@ -6,7 +6,7 @@
 /*   By: jchirk <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/21 11:47:31 by jchirk            #+#    #+#             */
-/*   Updated: 2018/08/21 15:47:58 by jchirk           ###   ########.fr       */
+/*   Updated: 2018/08/22 18:51:30 by jchirk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 void	ft_list_sort(t_list **begin_list, int (*cmp)())
 {
 	t_list	*current;
-	t_list	*next;
 	void	*tmp;
 
+	if (*begin_list == NULL)
+		return ;
 	current = *begin_list;
 	while (current != NULL && current->next != NULL)
 	{

@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_remove_if.c                                :+:      :+:    :+:   */
+/*   ft_list_merge.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jchirk <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/20 20:37:13 by jchirk            #+#    #+#             */
-/*   Updated: 2018/08/21 11:38:39 by jchirk           ###   ########.fr       */
+/*   Created: 2018/08/21 11:43:31 by jchirk            #+#    #+#             */
+/*   Updated: 2018/08/23 15:48:56 by jchirk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-void	ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)())
+void	ft_list_merge(t_list **begin_list, t_list *begin_list2)
 {
 	t_list	*current;
-	t_list	*remove;
 
-	current = *begin_list;
-	while (current != NULL && current->next != NULL)
+	if (*begin_list == NULL)
+		*begin_list = begin_list2;
+	else
 	{
-		if (cmp(data_ref, current->next->data) == 0)
-		{
-			remove = current->next;
-			current->next = current->next->next;
-			free(remove);
-		}
-		else
+		current = *begin_list;
+		while (current->next != NULL)
 			current = current->next;
-	}
-	remove = *begin_list;
-	if (cmp(data_ref, remove->data) == 0)
-	{
-		*begin_list = remove->next;
-		free(remove);
+		current->next = begin_list2;
 	}
 }

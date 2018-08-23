@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_at.c                                       :+:      :+:    :+:   */
+/*   display_file.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jchirk <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/17 16:21:04 by jchirk            #+#    #+#             */
-/*   Updated: 2018/08/21 16:00:08 by jchirk           ###   ########.fr       */
+/*   Created: 2018/08/21 18:36:55 by jchirk            #+#    #+#             */
+/*   Updated: 2018/08/22 15:22:39 by jchirk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+#include "display_file.h"
 
-t_list		*ft_list_at(t_list *begin_list, unsigned int nbr)
+void	ft_display_file(char *path)
 {
-	int		i;
-	t_list	*current;
+	int		fd;
+	char	buf[2];
 
-	i = 0;
-	current = begin_list;
-	while (current != NULL)
-	{
-		current = current->next;
-		if (i == (nbr - 1))
-			return (current);
-		i++;
-	}
-	return (NULL);
+	buf[1] = '\0';
+	fd = open(path, O_RDONLY);
+	if (fd == -1)
+		return ;
+	while (read(fd, buf, 1) > 0)
+		ft_putstr(buf);
+	close(fd);
 }
